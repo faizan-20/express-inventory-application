@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 #{title}: #{manufacturer.name}
+  p= manufacturer.est
+
+  if manufacturer_watches.length
+
+    p #[strong Delete the following watches before attempting to delete this manufacturer.]
+
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Watches
+
+      dl
+      each book in manufacturer_watches
+        dt
+          a(href=book.url) #{book.name}
+        dd #{book.description}
+
+  else
+    p Do you really want to delete this Manufacturer?
+
+    form(method='POST' action='')
+      div.form-group
+        input#authorid.form-control(type='hidden',name='manufacturerid', required='true', value=manufacturer._id )
+
+      button.btn.btn-primary(type='submit') Delete

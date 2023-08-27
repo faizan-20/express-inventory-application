@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em WatchStore]
+
+  h1 Dynamic Content 
+
+  p The store has following record counts: 
+
+  ul 
+  li #[strong Watches:] !{watch_count}
+  li #[strong Manufacturers:] !{manufacturer_count}
+  li #[strong Categories:] !{category_count}

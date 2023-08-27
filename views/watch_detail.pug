@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    h1 Watch: #{watch.title}
+
+    p #[strong Manufacturer: ]
+        a(href=watch.manufacturer.url)  #{watch.manufacturer.name}
+    p #[strong Description: ] #{watch.description}
+    p #[strong Category: ] #{watch.category.name}
+    hr
+    p 
+        a(href=watch.url+'/delete') Delete Watch
+    p 
+        a(href=watch.url+'/update') Update Watch

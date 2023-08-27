@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+    h1 Manufacturer: #{manufacturer.name}
+    p EST: #{manufacturer.est}
+
+    div(style='margin-left:20px;margin-top:20px')
+    
+        h4 Watches
+
+        dl
+            each watch in manufacturer_watches
+                dt 
+                    a(href=watch.url) #{watch.name}
+                dd #{watch.description}
+            
+            else 
+                p This manufacturer has no watches
+        hr
+        p 
+            a(href=manufacturer.url+'/delete') Delete Manufacturer
+        p   
+            a(href=manufacturer.url+'/update') Update Manufacturer
